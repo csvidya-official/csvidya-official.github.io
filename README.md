@@ -67,8 +67,9 @@ python -m http.server 8000
 
 ## Brand reference
 
-- **Colors:** green `#2E6B2E` (primary), navy `#1B2D6E`, gold `#C9962A` (CTAs),
-  bronze `#7B4F2E`, ice `#EEF2FA`, ivory `#F8F6F1`.
+- **Colors** (sampled from the crest logo): green `#4C6E4D` (primary), navy
+  `#253659`, gold `#C79A4F` (CTAs), bronze `#643F19`, cream `#D9C297`, ice
+  `#F2EEE4`, ivory `#F8F5EE`.
 - **Fonts:** Playfair Display (headings), Inter (body), JetBrains Mono (labels) —
   loaded from Google Fonts.
 

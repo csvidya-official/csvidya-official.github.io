@@ -6,18 +6,30 @@
 /* ---------------------------------------------------------------- Tokens */
 :root {
   /* Brand colors (extracted from the CS Vidya logo) */
-  --color-green:      #2E6B2E;  /* PRIMARY — hero, nav, footer, major sections */
-  --color-green-dark: #245524;  /* derived: darker green for gradients/hover    */
-  --color-green-soft: #3A7E3A;  /* derived: lighter green for texture           */
-  --color-navy:       #1B2D6E;  /* secondary dark — cards, accents, outlines    */
-  --color-gold:       #C9962A;  /* CTAs, hover states, highlights, tassel       */
-  --color-gold-dark:  #AD7F1F;  /* derived: gold hover/pressed                  */
-  --color-bronze:     #7B4F2E;  /* ribbon/banner elements, secondary borders    */
-  --color-ice:        #EEF2FA;  /* swan white — card backgrounds, light sections*/
-  --color-ivory:      #F8F6F1;  /* alternating section backgrounds              */
-  --color-text-dark:  #111827;  /* body text on light backgrounds              */
-  --color-text-light: #F0EDE8;  /* body text on dark/green backgrounds         */
-  --color-text-muted: rgba(240, 237, 232, 0.72); /* muted light text           */
+  /* Sampled from the CS Vidya crest logo (shield, cap, roundel, ribbon). */
+  --color-green:      #4C6E4D;  /* PRIMARY — shield green; hero, nav, footer, sections */
+  --color-green-dark: #3C5A3D;  /* derived: darker shield green for gradients/hover     */
+  --color-green-soft: #5E8260;  /* derived: lighter laurel green for texture            */
+  --color-navy:       #253659;  /* graduation cap / shield outline; cards, accents      */
+  --color-gold:       #D2A352;  /* roundel ring gold; CTAs, hover states, highlights    */
+  --color-gold-dark:  #B38447;  /* derived: gold hover/pressed (logo bronze-gold)       */
+  --color-gold-ink:   #8F6B2C;  /* derived: darker gold for gold text on light bg (AA)  */
+  --color-bronze:     #643F19;  /* dark brown crest outline; ribbon + secondary borders */
+  --color-cream:      #D9C297;  /* parchment from the open book; warm light accent       */
+  --color-ice:        #F2EEE4;  /* warm off-white (ribbon fill); card + light sections   */
+  --color-ivory:      #F8F5EE;  /* alternating section backgrounds (warm ivory)          */
+  --color-text-dark:  #1A1F2B;  /* body text on light backgrounds                       */
+  --color-text-light: #F2EEE4;  /* body text on dark/green backgrounds                  */
+  --color-text-muted: rgba(242, 238, 228, 0.74); /* muted light text                   */
+
+  /* RGB channels of the brand colors, for use inside rgba() (tints, shadows,
+     translucent borders). Keep these in sync with the hex values above so the
+     palette has a single source of truth. */
+  --rgb-green:  76, 110, 77;
+  --rgb-navy:   37, 54, 89;
+  --rgb-gold:   210, 163, 82;
+  --rgb-bronze: 100, 63, 25;
+  --rgb-light:  242, 238, 228;
 
   /* Typography */
   --font-display: "Playfair Display", Georgia, serif;
@@ -39,8 +51,8 @@
   --radius-pill: 999px;
 
   /* Effects */
-  --shadow-card: 0 6px 24px rgba(27, 45, 110, 0.08);
-  --shadow-lift: 0 18px 44px rgba(27, 45, 110, 0.18);
+  --shadow-card: 0 6px 24px rgba(var(--rgb-navy), 0.10);
+  --shadow-lift: 0 18px 44px rgba(var(--rgb-navy), 0.20);
   --nav-height: 68px;
   --transition: 0.25s ease;
 }
@@ -152,15 +164,18 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
 }
 .btn--primary:hover { background: var(--color-gold-dark); }
 
-/* Ghost: gold border + text, transparent */
+/* Ghost: gold border, light label, transparent. Light text keeps the label
+   legible on the green hero (gold-on-green can't reach AA); the gold border
+   carries the accent, and hover fills solid gold with navy text. */
 .btn--ghost {
   background: transparent;
-  color: var(--color-gold);
+  color: var(--color-text-light);
   border-color: var(--color-gold);
 }
 .btn--ghost:hover {
   background: var(--color-gold);
   color: var(--color-navy);
+  border-color: var(--color-gold);
 }
 
 /* Green: green bg, ivory text */
@@ -269,7 +284,7 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   /* Subtle radial glow + faint dot-grid texture (CSS only) */
   background-image:
     radial-gradient(circle at 50% 30%, var(--color-green-soft) 0%, transparent 55%),
-    radial-gradient(rgba(240, 237, 232, 0.06) 1.2px, transparent 1.2px);
+    radial-gradient(rgba(var(--rgb-light), 0.06) 1.2px, transparent 1.2px);
   background-size: 100% 100%, 26px 26px;
 }
 .hero__inner {
@@ -341,7 +356,7 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(4.5rem, 12vw, 7rem);
-  color: var(--color-gold);
+  color: var(--color-gold); /* large decorative glyph (aria-hidden); echoes the logo's gold roundel */
   line-height: 1;
 }
 .sanskrit__caption {
@@ -363,7 +378,7 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
 .card {
   position: relative;
   background: #fff;
-  border: 1px solid rgba(27, 45, 110, 0.12);
+  border: 1px solid rgba(var(--rgb-navy), 0.12);
   border-radius: var(--radius);
   padding: var(--space-xl) var(--space-lg) var(--space-lg);
   overflow: hidden;
@@ -386,14 +401,14 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
 
 /* Featured card: elevated */
 .card--featured {
-  border-color: rgba(46, 107, 46, 0.35);
+  border-color: rgba(var(--rgb-green), 0.40);
   box-shadow: var(--shadow-lift);
 }
 .card--featured:hover { transform: translateY(-6px); }
 
 /* Muted (coming soon) card */
-.card--muted { background: #fbfaf7; }
-.card--muted .card__body { color: rgba(17, 24, 39, 0.7); }
+.card--muted { background: #FAF7F0; }
+.card--muted .card__body { color: rgba(26, 31, 43, 0.72); }
 
 /* Badge pinned top-right */
 .card__badge {
@@ -411,9 +426,9 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   border-radius: var(--radius-sm);
   margin-bottom: var(--space-md);
 }
-.card__icon--gold   { background: rgba(201, 150, 42, 0.14); color: var(--color-gold); }
-.card__icon--green  { background: rgba(46, 107, 46, 0.14);  color: var(--color-green); }
-.card__icon--bronze { background: rgba(123, 79, 46, 0.14);  color: var(--color-bronze); }
+.card__icon--gold   { background: rgba(var(--rgb-gold), 0.16);   color: var(--color-gold); }
+.card__icon--green  { background: rgba(var(--rgb-green), 0.16);  color: var(--color-green); }
+.card__icon--bronze { background: rgba(var(--rgb-bronze), 0.14); color: var(--color-bronze); }
 
 .card__title {
   font-family: var(--font-display);
@@ -430,10 +445,10 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   display: inline-block;
   margin-top: var(--space-md);
   font-weight: 600;
-  color: var(--color-gold);
+  color: var(--color-gold-ink); /* darker gold so the link clears AA on the white card */
   transition: color var(--transition);
 }
-.card__link:hover { color: var(--color-gold-dark); }
+.card__link:hover { color: var(--color-bronze); }
 .card__cta { margin-top: var(--space-md); align-self: flex-start; }
 .card--muted .pill--bronze-outline { margin-top: var(--space-md); align-self: flex-start; }
 
@@ -457,7 +472,7 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   width: min(100%, 640px);
   aspect-ratio: 16 / 9;
   background: var(--color-green-dark);
-  border: 2px solid rgba(240, 237, 232, 0.18);
+  border: 2px solid rgba(var(--rgb-light), 0.18);
   border-radius: var(--radius);
   display: flex;
   flex-direction: column;
@@ -606,7 +621,7 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   .nav__links.is-open { max-height: 320px; }
   .nav__links a {
     padding: var(--space-sm) var(--space-md);
-    border-top: 1px solid rgba(240, 237, 232, 0.12);
+    border-top: 1px solid rgba(var(--rgb-light), 0.12);
   }
 }
 
