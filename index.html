@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary meta -->
+  <title>CS Vidya — Computer Science, Understood</title>
+  <meta name="description" content="Free CS lessons on YouTube and 1-on-1 tutoring with Professor W. Data structures, algorithms, systems, interview prep — explained so they make sense." />
+  <link rel="canonical" href="https://csvidya.com" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CS Vidya — Computer Science, Understood" />
+  <meta property="og:description" content="Free CS lessons on YouTube and 1-on-1 tutoring with Professor W. Data structures, algorithms, systems, interview prep — explained so they make sense." />
+  <meta property="og:image" content="./csVidyalogo.png" />
+  <meta property="og:url" content="https://csvidya.com" />
+
+  <!-- Favicon (reuses the logo) -->
+  <link rel="icon" type="image/png" href="./csVidyalogo.png" />
+
+  <!-- Google Fonts: Playfair Display (display), Inter (body), JetBrains Mono (code/labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- ============================= NAV ============================= -->
+  <header class="nav" id="top">
+    <div class="nav__inner container">
+      <!-- Brand: logo image + wordmark -->
+      <a class="nav__brand" href="#top" aria-label="CS Vidya home">
+        <img class="nav__logo" src="./csVidyalogo.png" alt="CS Vidya logo — a swan wearing a graduation cap above a ribbon banner" />
+        <span class="nav__wordmark">CS Vidya</span>
+      </a>
+
+      <!-- Desktop links -->
+      <nav class="nav__links" id="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#offerings">Offerings</a>
+        <a href="#youtube">YouTube</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Mobile hamburger toggle -->
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================= HERO ============================= -->
+    <section class="hero" id="hero">
+      <div class="hero__inner container">
+        <img class="hero__logo" src="./csVidyalogo.png" alt="CS Vidya logo — a swan wearing a graduation cap above a ribbon banner reading CS VIDYA" />
+        <h1 class="hero__title">Computer science, understood.</h1>
+        <p class="hero__subtitle">Free lessons on YouTube. 1-on-1 tutoring. The concepts behind the code, explained until they click.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="mailto:csvidya.official@gmail.com?subject=Tutoring%20Session%20Request">Book a Session</a>
+          <a class="btn btn--ghost" href="https://youtube.com/@csvidya.official" target="_blank" rel="noopener">Watch Free Lessons</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= ABOUT ============================= -->
+    <section class="section about reveal" id="about">
+      <div class="container about__grid">
+        <!-- Left: story -->
+        <div class="about__copy">
+          <span class="ribbon">WHO WE ARE</span>
+          <h2 class="section__title">CS taught by someone who gets it.</h2>
+          <span class="rule"></span>
+          <p class="about__body">
+            Most tutorials tell you what to type and stop there. CS Vidya is run by
+            Professor W, who teaches the why underneath: how a data structure actually
+            works, why an algorithm is fast, what a system is really doing. Every lesson
+            comes from sitting with students one-on-one and watching where they get stuck.
+          </p>
+          <div class="stat-pills">
+            <span class="pill pill--stat">1-on-1 tutoring</span>
+            <span class="pill pill--stat">New videos weekly</span>
+          </div>
+        </div>
+
+        <!-- Right: Sanskrit card -->
+        <div class="about__card">
+          <span class="sanskrit" lang="sa" aria-hidden="true">विद्या</span>
+          <p class="sanskrit__caption">Vidya — Sanskrit for knowledge</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= OFFERINGS ============================= -->
+    <section class="section offerings reveal" id="offerings">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <span class="ribbon">WHAT WE OFFER</span>
+          <h2 class="section__title">Three ways to learn.</h2>
+          <span class="rule rule--center"></span>
+        </div>
+
+        <div class="cards">
+
+          <!-- Card 1: Free Lessons -->
+          <article class="card" data-accent="gold">
+            <span class="card__accent card__accent--gold"></span>
+            <div class="card__icon card__icon--gold" aria-hidden="true">
+              <!-- Play button -->
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <h3 class="card__title">Free Lessons</h3>
+            <p class="card__body">
+              Short-form CS breakdowns on YouTube — data structures, algorithms, systems,
+              OOP, and more. New videos weekly, no fluff.
+            </p>
+            <a class="card__link" href="https://youtube.com/@csvidya.official" target="_blank" rel="noopener">Watch on YouTube →</a>
+          </article>
+
+          <!-- Card 2: 1-on-1 Tutoring (FEATURED) -->
+          <article class="card card--featured" data-accent="green">
+            <span class="card__accent card__accent--green"></span>
+            <span class="pill pill--green card__badge">Accepting Students</span>
+            <div class="card__icon card__icon--green" aria-hidden="true">
+              <!-- Person + chat -->
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M2 21a7 7 0 0 1 13-3.5"/><path d="M14 13h7a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-1v3l-3-3h-3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1z"/></svg>
+            </div>
+            <h3 class="card__title">1-on-1 Tutoring</h3>
+            <p class="card__body">
+              Private sessions tailored to exactly where you're stuck. Interview prep,
+              coursework, or building real fundamentals from scratch.
+            </p>
+            <a class="btn btn--green card__cta" href="mailto:csvidya.official@gmail.com?subject=Tutoring%20Session%20Request">Book a Session</a>
+          </article>
+
+          <!-- Card 3: Courses (coming soon) -->
+          <article class="card card--muted" data-accent="bronze">
+            <span class="card__accent card__accent--bronze"></span>
+            <div class="card__icon card__icon--bronze" aria-hidden="true">
+              <!-- Book / course -->
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <h3 class="card__title">Courses</h3>
+            <p class="card__body">
+              Self-paced structured courses covering core CS topics end to end. Coming soon.
+            </p>
+            <span class="pill pill--bronze-outline">Coming Soon</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= YOUTUBE ============================= -->
+    <section class="section youtube reveal" id="youtube">
+      <div class="container youtube__inner">
+        <h2 class="section__title section__title--light">Watch. Learn. Actually get it.</h2>
+        <p class="youtube__sub">Free CS content — no fluff, no hand-waving.</p>
+
+        <!-- Static, clickable video-card placeholder (no embed) -->
+        <a class="video-card" href="https://youtube.com/@csvidya.official" target="_blank" rel="noopener" aria-label="Visit the CS Vidya YouTube channel">
+          <span class="video-card__play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+          <span class="video-card__channel">@csvidya.official</span>
+        </a>
+
+        <a class="btn btn--primary youtube__cta" href="https://youtube.com/@csvidya.official" target="_blank" rel="noopener">Visit the Channel →</a>
+
+        <!-- Topic pills -->
+        <ul class="topic-pills" aria-label="Topics covered">
+          <li>Algorithms</li>
+          <li>Data Structures</li>
+          <li>Systems</li>
+          <li>OOP</li>
+          <li>Web</li>
+          <li>Interview Prep</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================= CONTACT ============================= -->
+    <section class="section contact reveal" id="contact">
+      <div class="container contact__inner">
+        <span class="ribbon">GET STARTED</span>
+        <h2 class="section__title">Ready to level up?</h2>
+        <span class="rule rule--center"></span>
+        <p class="contact__body">
+          Send an email to get started. Sessions are tailored to your goals, background,
+          and schedule. Response within 24 hours.
+        </p>
+        <a class="btn btn--green btn--lg" href="mailto:csvidya.official@gmail.com?subject=Tutoring%20Session%20Request">Email to Book a Session</a>
+
+        <!-- Social row -->
+        <div class="social social--dark-icons">
+          <a href="https://youtube.com/@csvidya.official" target="_blank" rel="noopener" aria-label="CS Vidya on YouTube">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+          </a>
+          <a href="https://instagram.com/csvidya.official" target="_blank" rel="noopener" aria-label="CS Vidya on Instagram">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://tiktok.com/@csvidya.official" target="_blank" rel="noopener" aria-label="CS Vidya on TikTok">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.4 2.3 1.8 3.9 4 4.2v3c-1.5.1-2.9-.3-4.2-1v6.4a6.1 6.1 0 1 1-6.1-6.1c.3 0 .6 0 .9.1v3.1a3.1 3.1 0 1 0 2.2 3V3h3.2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <!-- Left: brand -->
+      <div class="footer__brand">
+        <span class="footer__wordmark">CS Vidya</span>
+        <p class="footer__tagline">Computer science, understood.</p>
+      </div>
+
+      <!-- Center: nav -->
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#offerings">Offerings</a>
+        <a href="#youtube">YouTube</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Right: social + domain -->
+      <div class="footer__social">
+        <div class="social social--light-icons">
+          <a href="https://youtube.com/@csvidya.official" target="_blank" rel="noopener" aria-label="CS Vidya on YouTube">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+          </a>
+          <a href="https://instagram.com/csvidya.official" target="_blank" rel="noopener" aria-label="CS Vidya on Instagram">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://tiktok.com/@csvidya.official" target="_blank" rel="noopener" aria-label="CS Vidya on TikTok">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.4 2.3 1.8 3.9 4 4.2v3c-1.5.1-2.9-.3-4.2-1v6.4a6.1 6.1 0 1 1-6.1-6.1c.3 0 .6 0 .9.1v3.1a3.1 3.1 0 1 0 2.2 3V3h3.2z"/></svg>
+          </a>
+        </div>
+        <span class="footer__domain">csvidya.com</span>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2025 CS Vidya · Computer science, understood.</p>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+</html>
